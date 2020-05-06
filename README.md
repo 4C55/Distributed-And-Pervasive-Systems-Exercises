@@ -1,2 +1,2 @@
-# Distributed-And-Pervasive-Systems-Exercises
-2020 Aarhus Univeristy Distributed And Pervasive Systems Exercises
+# Distributed-And-Pervasive-Systems-Prototypes
+2020 Aarhus University Distributed And Pervasive Systems Prototypes
