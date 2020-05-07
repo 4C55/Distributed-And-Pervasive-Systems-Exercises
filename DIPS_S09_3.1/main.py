@@ -6,7 +6,7 @@ import itertools
 
 NODES = [1, 2, 3, 4, 5]
 DEAD_NODES = [3, 5]
-NODE_STARTING_ELECTION = 4
+NODE_STARTING_ELECTION = 1
 
 ELECTION_TIMEOUT_S = 3
 MAX_ID = max(NODES)
@@ -67,10 +67,9 @@ def node_process_start_election(id, channels):
                         run_election_again = False
                         return run_election_again
                     elif message == 'Election' and channel.pair_id < id:
-                        # Received an election message from a node with lower id - send reply and restart election
+                        # Received an election message from a node with lower id - send a reply and continue with the
+                        # election
                         channel.send_message('ElectionReply')
-                        run_election_again = True
-                        return run_election_again
                     elif message == 'Victory':
                         # Received a victory message - follow that node
                         print('Node %d follows node %d' % (id, channel.pair_id))
